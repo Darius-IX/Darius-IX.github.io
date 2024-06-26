@@ -1,6 +1,6 @@
 {
-    "name": "gege",
-    "short_name": "gege",
+    "name": "performance_test",
+    "short_name": "performance_test",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
