@@ -10,12 +10,12 @@ const Navbar = () => {
     <NavbarButton label="Verwaltung" route="/verwaltung"></NavbarButton>,
   ];
   return (
-    <header className="w-full fixed flex justify-between items-center text-black py-6 px-8 md:px-32 drop-shadow-md bg-gradient-to-r from-light to-accent-light opacity-90">
+    <header className="w-full fixed flex justify-between items-center text-black py-2 sm:py-6 px-8 md:px-32 drop-shadow-md bg-gradient-to-r from-light to-accent-light opacity-90">
       <a href="/">
         <img
           src={ReactLogo}
           alt=""
-          className="w-12 hover:scale-105 transition-all"
+          className="w-8 sm:w-12 hover:scale-105 transition-all"
         />
       </a>
       <h1 className="">First Demo</h1>

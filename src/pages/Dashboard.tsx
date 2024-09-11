@@ -1,44 +1,27 @@
+import Chat from "../components/Dashboard/Chat";
+import ContinueExam from "../components/Dashboard/ContinueExam";
+import CurrentSubjects from "../components/Dashboard/CurrentSubjects";
+import News from "../components/Dashboard/News";
+import RecentExams from "../components/Dashboard/RecentExams";
+import Statistics from "../components/Dashboard/Statistics";
+
 const Dashboard = () => {
   return (
-    <div className="p-8">
-      <h1>Dashboard</h1>
-      <div className="xl:flex">
-        <div className="sm:flex gap-4">
-          <div className="w-96 h-56 bg-accent-light content-center shrink-0 text-center text-2xl">
-            Image
-          </div>
-          <div>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni
-            impedit eius harum dolor ea, ducimus provident modi quos delectus
-            eveniet repellendus sed eligendi! Hic fuga quaerat possimus, fugit
-            ducimus dicta?
-          </div>
-        </div>
-        <div className="p-2 shrink-0"></div>
-        <div className="sm:flex gap-4">
-          <div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam nobis
-            consequatur ad labore quo nulla vero omnis doloribus iure minus
-            suscipit eveniet hic, dignissimos laborum ex? Corporis quos vero
-            molestiae!
-          </div>
-          <div className="w-96 h-56 bg-accent-dark content-center shrink-0 text-center text-2xl">
-            Image
-          </div>
-        </div>
-      </div>
-      <div>
-        <div>
-          Klausuren fortsetzen (Liste von angefangenen Klausuren, Scrollbar,
-          fixed size)
-        </div>
-        <div>Fach suchen</div>
-        <div>Statistiken</div>
-        <div>Vergangene Klausuren</div>
-        <div>Chat in groß, zeigen wenn neue nachrichten auf allen pages</div>
-        <div>
-          KIRSCHE AUF SAHNE: Dashboard flexibel nach eigenen Wünschen bearbeiten
-        </div>
+    <div className="p-4">
+      <h1 className="text-center text-xl font-semibold">Dashboard</h1>
+      <h6>
+        (Alle sachen mit Fragezeichen Icon über das man hovern kann für info
+        text, endboss feature: Nutzende können Dashboard selber bearbeiten, also
+        layout (stelle mir ein gitter vor, wo man ggf auch dinge über mehrere
+        Zellen machen kann))
+      </h6>
+      <div className="gap-4 grid xl:grid-cols-3 lg:grid-cols-2 sm:grid-cols-1">
+        <ContinueExam></ContinueExam>
+        <RecentExams></RecentExams>
+        <CurrentSubjects></CurrentSubjects>
+        <Statistics></Statistics>
+        <Chat></Chat>
+        <News></News>
       </div>
     </div>
   );
