@@ -27,6 +27,19 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
+      <div>
+        <div>
+          Klausuren fortsetzen (Liste von angefangenen Klausuren, Scrollbar,
+          fixed size)
+        </div>
+        <div>Fach suchen</div>
+        <div>Statistiken</div>
+        <div>Vergangene Klausuren</div>
+        <div>Chat in groß, zeigen wenn neue nachrichten auf allen pages</div>
+        <div>
+          KIRSCHE AUF SAHNE: Dashboard flexibel nach eigenen Wünschen bearbeiten
+        </div>
+      </div>
     </div>
   );
 };

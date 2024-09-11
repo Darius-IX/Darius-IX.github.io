@@ -4,7 +4,11 @@ import ReactLogo from "/src/assets/react.svg";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const navbarButtons = [
+    <NavbarButton label="Dashboard" route="/dashboard"></NavbarButton>,
+    <NavbarButton label="Profil" route="/profil"></NavbarButton>,
+    <NavbarButton label="Verwaltung" route="/verwaltung"></NavbarButton>,
+  ];
   return (
     <header className="w-full fixed flex justify-between items-center text-black py-6 px-8 md:px-32 drop-shadow-md bg-gradient-to-r from-light to-accent-light opacity-90">
       <a href="/">
@@ -16,9 +20,7 @@ const Navbar = () => {
       </a>
       <h1 className="">First Demo</h1>
       <div className="hidden xl:flex items-center gap-12 font-semibold text-base">
-        <NavbarButton label="Dashboard" route="/"></NavbarButton>
-        <NavbarButton label="Profil" route="/profil"></NavbarButton>
-        <NavbarButton label="Verwaltung" route="/verwaltung"></NavbarButton>
+        {navbarButtons}
       </div>
       <div className="relative hidden md:flex items-center justify-center gap-3">
         <i className="bx bx-search absolute left-3 text-2xl text-gray-500"></i>
@@ -39,9 +41,7 @@ const Navbar = () => {
           }`}
           style={{ transition: "transform 0.3s ease, opacitiy 0.3s ease" }}
         >
-          <NavbarButton label="Dashboard" route="/"></NavbarButton>
-          <NavbarButton label="Profil" route="/profil"></NavbarButton>
-          <NavbarButton label="Verwaltung" route="/verwaltung"></NavbarButton>
+          {navbarButtons}
         </div>
       </div>
     </header>

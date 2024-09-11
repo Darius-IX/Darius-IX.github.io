@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Dashboard from "./pages/Dashboard";
 import Profile from "./pages/Profile";
@@ -12,17 +12,21 @@ function App() {
   return (
     <div className="h-screen">
       <Navbar></Navbar>
-      <div className="bg-gradient-to-l from-accent-light to-accent-dark flex flex-col justify-between h-screen">
+      <div className="bg-gradient-to-r from-accent-dark to-accent-light flex flex-col justify-between h-screen">
         <div>
           <div className="p-12"></div>
-          <div className="bg-gradient-to-l from-accent-light to-accent-dark">
+          <div className="bg-gradient-to-r from-accent-dark to-accent-light">
             <Routes>
-              <Route path="/" Component={Dashboard}></Route>
-              <Route path="/profil" Component={Profile}></Route>
-              <Route path="/verwaltung" Component={Administration}></Route>
+              <Route index path="/dashboard" element={<Dashboard />}></Route>
+              <Route path="/dashboard" element={<Dashboard />}></Route>
+              <Route path="/profil" element={<Profile />}></Route>
+              <Route path="/verwaltung" element={<Administration />}></Route>
+              <Route
+                path="*"
+                element={<Navigate to="/dashboard" replace />}
+              ></Route>
             </Routes>
           </div>
-          <div className="bg-gradient-to-l from-accent-light to-accent-dark h-full w-full flex-1"></div>
         </div>
         <Footer></Footer>
       </div>
