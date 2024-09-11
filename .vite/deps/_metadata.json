@@ -1,0 +1,40 @@
+{
+  "hash": "57afe7f5",
+  "configHash": "0815a161",
+  "lockfileHash": "00c1b5ef",
+  "browserHash": "cc7044a4",
+  "optimized": {
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.js",
+      "file": "react-router-dom.js",
+      "fileHash": "1c6d3046",
+      "needsInterop": false
+    },
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "0f7b49e2",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "f3c3e52d",
+      "needsInterop": true
+    },
+    "react-hotkeys-hook": {
+      "src": "../../node_modules/react-hotkeys-hook/dist/react-hotkeys-hook.esm.js",
+      "file": "react-hotkeys-hook.js",
+      "fileHash": "27dabf0b",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-QPG7G3M7": {
+      "file": "chunk-QPG7G3M7.js"
+    },
+    "chunk-UTEJFLXC": {
+      "file": "chunk-UTEJFLXC.js"
+    }
+  }
+}
