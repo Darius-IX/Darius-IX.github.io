@@ -7,8 +7,13 @@ interface NavbarButtonProps {
 
 const NavbarButton = ({ label, route }: NavbarButtonProps) => {
   return (
-    <div className="p-3 hover:bg-accent-light rounded-lg cursor-pointer">
-      <NavLink to={route}>{label}</NavLink>
+    <div>
+      <NavLink
+        className="px-3 py-2 hover:bg-accent-light rounded-lg cursor-pointer"
+        to={route}
+      >
+        {label}
+      </NavLink>
     </div>
   );
 };

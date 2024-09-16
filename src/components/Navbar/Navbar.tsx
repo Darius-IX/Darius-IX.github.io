@@ -36,7 +36,7 @@ const Navbar = () => {
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         ></i>
         <div
-          className={`p-2 absolute top-20 xl:hidden bg-light flex flex-col items-center gap-3 font-semibold text-lg transform transition-transform ${
+          className={`px-2 py-4 absolute top-20 xl:hidden bg-light flex flex-col items-center gap-3 font-semibold text-lg transform transition-transform ${
             isMenuOpen ? "" : "hidden"
           }`}
           style={{ transition: "transform 0.3s ease, opacitiy 0.3s ease" }}

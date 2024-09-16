@@ -22,6 +22,7 @@ const Dashboard = () => {
         <Statistics></Statistics>
         <Chat></Chat>
         <News></News>
+        {/* Couchen  */}
       </div>
     </div>
   );

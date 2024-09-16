@@ -8,7 +8,7 @@ const RecentExams = () => {
     "Klausur Z",
   ];
   return (
-    <div className="bg-accent-light overflow-y-auto border-2 border-primary max-h-60">
+    <div className="bg-accent-light overflow-y-auto border-2 border-primary max-h-60 rounded-xl">
       {/* <div className="w-96 max-h-56 bg-accent-light shrink-0 overflow-y-auto"> */}
       <h2 className="text-center font-semibold">Zuletzt beantwortet</h2>
       <h6>(letzten 5 (?) Klausuren die vollständig bearbeitet wurden)</h6>
