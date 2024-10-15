@@ -10,7 +10,8 @@ const Profile = () => {
       <InputFieldsWithLabel></InputFieldsWithLabel>
       <div>
         "Eine Änderung des Vor- oder Nachnamen ist nur durch einen Admin
-        möglich. Wende dich damit bitte an FSR@UDE.de"
+        möglich. Wende dich damit bitte an FSR@UDE.de (kann man den Rest
+        ändern?)"
       </div>
       <hr className="my-1" />
       <div className="xs:flex">

@@ -7,7 +7,13 @@ const Navbar = () => {
   const navbarButtons = [
     <NavbarButton label="Dashboard" route="/dashboard"></NavbarButton>,
     <NavbarButton label="Profil" route="/profil"></NavbarButton>,
-    <NavbarButton label="Verwaltung" route="/verwaltung"></NavbarButton>,
+    <NavbarButton
+      label="Verwaltung"
+      route="/verwaltung"
+      secondLevelLabels={["Admin", "Uploader", "Freischalter"]}
+      secondLevelRoutes={["/admin", "/uploader", "/freischalter"]}
+    ></NavbarButton>,
+    <NavbarButton label="Logout" route="/login"></NavbarButton>,
   ];
   return (
     <header className="w-full fixed flex justify-between items-center text-black py-2 sm:py-6 px-8 md:px-32 drop-shadow-md bg-gradient-to-r from-light to-accent-light opacity-90">
