@@ -1,0 +1,21 @@
+.dashboard-grid-scrollbar::-webkit-scrollbar {
+    width: 1rem;
+}
+
+.dashboard-grid-scrollbar::-webkit-scrollbar-track {
+    background: hsl(120, 75%, 50%);
+    border-radius: 1em;
+}
+
+.dashboard-grid-scrollbar::-webkit-scrollbar-thumb {
+    background: hsl(120, 100%, 50%);
+    border-radius: 1em;
+}
+/* 
+@supports (scrollbar-color: red blue) {
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: red blue;
+        scrollbar-highlight-color: aqua;
+    }
+} */
