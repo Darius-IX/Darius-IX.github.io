@@ -16,7 +16,7 @@ const Navbar = () => {
     <NavbarButton label="Logout" route="/login"></NavbarButton>,
   ];
   return (
-    <header className="w-full fixed flex justify-between items-center text-black py-2 sm:py-6 px-8 md:px-32 drop-shadow-md bg-gradient-to-r from-light to-accent-light opacity-90">
+    <header className="w-full fixed flex justify-between items-center text-black py-6 px-8 md:px-32 drop-shadow-md bg-gradient-to-r from-light to-accent-light opacity-90 z-40">
       <a href="/">
         <img
           src={ReactLogo}
@@ -38,6 +38,16 @@ const Navbar = () => {
       </div>
       <div className="flex justify-center">
         <i
+          className="peer/icon_button bx bx-menu xl:hidden block text-5xl cursor-pointer"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        ></i>
+        <div
+          className="px-2 py-4 rounded-md border-2 border-primary absolute top-16 invisible peer-hover/icon_button:visible hover:visible bg-light flex flex-col items-center gap-3 font-semibold text-lg transform transition-transform"
+          style={{ transition: "transform 0.3s ease, opacitiy 0.3s ease" }}
+        >
+          {navbarButtons}
+        </div>
+        {/* <i
           className="bx bx-menu xl:hidden block text-5xl cursor-pointer"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         ></i>
@@ -48,7 +58,7 @@ const Navbar = () => {
           style={{ transition: "transform 0.3s ease, opacitiy 0.3s ease" }}
         >
           {navbarButtons}
-        </div>
+        </div> */}
       </div>
     </header>
   );

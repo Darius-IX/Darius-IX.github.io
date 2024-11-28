@@ -1,21 +1,26 @@
-.dashboard-grid-scrollbar::-webkit-scrollbar {
-    width: 1rem;
+:root {
+  --primary: #031927;
+  --accent-light: #9DD1F1;
+  --accent-dark: #508AA8;
+  --light: #C8E0F4;
+  --fully-transparent: hsla(0, 0%, 0%, 0);
+  --partially-transparent: hsla(0, 0%, 100%, 0.4);
 }
 
-.dashboard-grid-scrollbar::-webkit-scrollbar-track {
-    background: hsl(120, 75%, 50%);
-    border-radius: 1em;
+.os-scrollbar {
+  --os-track-bg: var(--partially-transparent);
+  --os-handle-bg: var(--accent-dark);
+  background-color: var(--fully-transparent);
+  --os-size: 1rem;
+  margin: 0 auto;
+  overflow: auto;
+  border-radius: 6px;
+  /* border: 2px solid var(--primary); */
+  box-shadow: rgb(var(--accent-dark) / 0.14) 0 0.875rem 3.125rem;
 }
-
-.dashboard-grid-scrollbar::-webkit-scrollbar-thumb {
-    background: hsl(120, 100%, 50%);
-    border-radius: 1em;
-}
-/* 
-@supports (scrollbar-color: red blue) {
-    * {
-        scrollbar-width: thin;
-        scrollbar-color: red blue;
-        scrollbar-highlight-color: aqua;
-    }
+/* https://github.com/KingSora/OverlayScrollbars/tree/master */
+/* .os-scrollbar-vertical{
+  --os-track-bg: var(--accent-light);
+  --os-handle-bg: var(--accent-dark);
+  --os-size: 2rem;
 } */

@@ -1,9 +1,8 @@
 import "simplebar-react/dist/simplebar.min.css";
 import SimpleBarReact from "simplebar-react";
-import "../../simplebars.css";
+import "../../scrollbars.css";
 import { OverlayScrollbarsComponent } from "overlayscrollbars-react";
-// https://github.com/KingSora/OverlayScrollbars/tree/master/packages/overlayscrollbars-react
-// might check this as well, more use cases (body, ifram etc)
+
 const CurrentSubjects = () => {
   const currentSubjectsExamples = [
     "Fach A",
@@ -19,22 +18,31 @@ const CurrentSubjects = () => {
   ];
   return (
     //DRAWING ORDER: IN FRONT OF NAVBAR!
-    <OverlayScrollbarsComponent
-      className="border-2 border-primary overflow-y-auto max-h-60 rounded-xl bg-accent-light"
-      defer
-    >
+    <div className="border-2 border-primary rounded-xl bg-accent-light max-h-60 flex flex-col">
       <h2 className="text-center font-semibold">Fächer</h2>
       <h6>
         (Automatisch Fächer des aktuellen Semesters hier rein + Möglichkeit
         weitere Fächer hinzuzufügen)
       </h6>
       <hr />
-      <ul className="pl-4">
-        {currentSubjectsExamples.map((subject) => {
-          return <li key={subject}>{subject}</li>;
-        })}
-      </ul>
-    </OverlayScrollbarsComponent>
+      <OverlayScrollbarsComponent
+        className="overflow-y-auto"
+        options={{
+          scrollbars: {
+            autoHide: "move",
+            autoHideDelay: 1000,
+            autoHideSuspend: true,
+          },
+        }}
+        defer
+      >
+        <ul className="pl-4">
+          {currentSubjectsExamples.map((subject) => {
+            return <li key={subject}>{subject}</li>;
+          })}
+        </ul>
+      </OverlayScrollbarsComponent>
+    </div>
   );
   return (
     <SimpleBarReact

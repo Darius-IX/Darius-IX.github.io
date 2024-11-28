@@ -1,3 +1,4 @@
+import { OverlayScrollbarsComponent } from "overlayscrollbars-react";
 import "../../scrollbars.css";
 
 const ContinueExam = () => {
@@ -15,6 +16,32 @@ const ContinueExam = () => {
     "Klausur K",
     "Klausur L",
   ];
+
+  return (
+    <OverlayScrollbarsComponent
+      className="border-2 border-primary overflow-y-auto max-h-60 rounded-xl bg-accent-light"
+      options={{
+        scrollbars: {
+          autoHide: "move",
+          autoHideDelay: 1000,
+          autoHideSuspend: true,
+        },
+      }}
+      defer
+    >
+      <h2 className="text-center font-semibold">Klausur fortsetzen</h2>
+      <h6>
+        (Button an Klausuren für "als angefangen markieren", damit Klausuren
+        hier auftauchen für später)
+      </h6>
+      <hr />
+      <ul className="pl-4">
+        {continueExamExamples.map((exam) => {
+          return <li key={exam}>{exam}</li>;
+        })}
+      </ul>
+    </OverlayScrollbarsComponent>
+  );
 
   return (
     <div className="bg-accent-light border-2 border-primary rounded-xl">

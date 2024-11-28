@@ -10,6 +10,8 @@
   --accent-light: #9DD1F1;
   --accent-dark: #508AA8;
   --light: #C8E0F4;
+  --fully-transparent: hsla(0, 0%, 0%, 0);
+  --partially-transparent: hsla(0, 0%, 100%, 0.4);
   --foreground-color-rgb: 97 218 251;
   --background-color-rgb: 40 44 52;
   --foreground-color: rgb(var(--foreground-color-rgb));
@@ -22,12 +24,12 @@
   }
 
 .os-scrollbar {
-  --os-track-bg: var(--accent-light);
+  --os-track-bg: var(--partially-transparent);
   --os-handle-bg: var(--accent-dark);
+  background-color: var(--fully-transparent);
   --os-size: 1rem;
   margin: 0 auto;
   overflow: auto;
-  background-color: var(--accent-light);
   border-radius: 6px;
   /* border: 2px solid var(--primary); */
   box-shadow: rgb(var(--accent-dark) / 0.14) 0 0.875rem 3.125rem;

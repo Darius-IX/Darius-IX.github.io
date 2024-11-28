@@ -35,7 +35,9 @@ const NavbarButton = ({
           <div className="peer/parent_button px-3 py-2 hover:bg-accent-light rounded-lg cursor-pointer">
             {label}
           </div>
-          <div className="absolute invisible peer-hover/parent_button:visible hover:visible bg-light p-2 rounded-md">
+          <div className="absolute max-xl:bottom-0 max-xl:right-20  invisible peer-hover/parent_button:visible hover:visible bg-light p-2 rounded-md border-primary border-2 w-40">
+            {/* <div className="absolute invisible peer-hover/parent_button:visible hover:visible bg-light p-2 rounded-md"> */}
+            {/* <div className="absolute bottom-0 right-20 invisible peer-hover/parent_button:visible hover:visible bg-light p-2 rounded-md border-primary border-2 w-40"> */}
             {SecondLevel(secondLevelLabels, secondLevelRoutes)}
           </div>
         </div>
