@@ -6,14 +6,14 @@ export default {
   ],
   theme: {
     colors: {
-      'primary': '#031927',
-      'accent-light': '#9DD1F1',
-      'accent-dark': '#508AA8',
-      'light': '#C8E0F4',
-      'contrast': '#F2D1C9',
-      'slate': 'slate-100',
-      'white': 'white',
-      'black': 'black',
+      'primary': 'var(--color-primary)',
+      'accent-light': 'var(--color-accent-light)',
+      'accent-dark': 'var(--color-accent-dark)',
+      'light': 'var(--color-light)',
+      'contrast': 'var(--color-contrast)',
+      'slate': 'var(--color-slate)',
+      'white': 'var(--color-white)',
+      'black': 'var(--color-black)',
     },
     screens: {
       'xs': '384px',

@@ -11,6 +11,7 @@ import TestPage from "./pages/TestPage";
 import Admin from "./pages/Admin";
 import Activator from "./pages/Activator";
 import Uploader from "./pages/Uploader";
+import Settings from "./pages/Settings";
 
 function IsPageWithoutNavbar(pathname: string) {
   const pagesWithoutNavbar = ["/login", "/registration", "/test"];
@@ -60,6 +61,7 @@ function App() {
               <Route path="/admin" element={<Admin />}></Route>
               <Route path="/freischalter" element={<Activator />}></Route>
               <Route path="/uploader" element={<Uploader />}></Route>
+              <Route path="/einstellungen" element={<Settings />}></Route>
               <Route path="/test" element={<TestPage />}></Route>
               <Route
                 path="*"

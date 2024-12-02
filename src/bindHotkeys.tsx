@@ -1,13 +1,15 @@
 import { useHotkeys } from "react-hotkeys-hook";
 import { NavigateFunction, useNavigate } from "react-router-dom";
 
+const hotkeyToLink: { [key: string]: string } = {
+  d: "/dashboard",
+  p: "/profil",
+  v: "/verwaltung",
+  e: "/einstellungen",
+};
+
 function ChangePage(hotkey: string, navigate: NavigateFunction) {
   console.log("ChangePage", hotkey);
-  const hotkeyToLink: { [key: string]: string } = {
-    d: "/",
-    p: "/profil",
-    v: "/verwaltung",
-  };
   if (!(hotkey in hotkeyToLink)) {
     return;
   }
@@ -16,7 +18,7 @@ function ChangePage(hotkey: string, navigate: NavigateFunction) {
 
 function HotkeyAction(hotkey: string, navigate: NavigateFunction) {
   console.log(hotkey);
-  if (["d", "p", "v"].includes(hotkey)) {
+  if (Object.keys(hotkeyToLink).includes(hotkey)) {
     ChangePage(hotkey, navigate);
   }
   switch (hotkey) {
@@ -25,7 +27,7 @@ function HotkeyAction(hotkey: string, navigate: NavigateFunction) {
 
 const bindHotkeys = () => {
   const navigate = useNavigate();
-  const allHotkeys = ["d", "p", "v"];
+  const allHotkeys = Object.keys(hotkeyToLink);
   allHotkeys.forEach((hotkey) => {
     useHotkeys(hotkey, () => HotkeyAction(hotkey, navigate));
   });

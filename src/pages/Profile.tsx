@@ -3,6 +3,7 @@ import StudySubjectSelector from "../components/Profile/StudySubjectSelector";
 import ChosenSemesterSelector from "../components/Profile/ChosenSemesterSelector";
 import ChangePassword from "../components/Profile/ChangePassword";
 import DeleteProfile from "../components/Profile/DeleteProfile";
+import NavbarButton from "../components/Navbar/NavbarButton";
 
 const Profile = () => {
   return (
@@ -39,9 +40,17 @@ const Profile = () => {
         <input className="mx-2 size-4 self-center" type="checkbox" />
       </div>
       <hr className="my-1" />
-      <button className="bg-accent-light p-2 rounded-md border-2">
-        Änderung Speichern
-      </button>
+      <div className="flex justify-between">
+        <button className="bg-accent-light p-2 rounded-md border-2">
+          Änderung Speichern
+        </button>
+        <div className="bg-accent-light p-2 rounded-md border-2">
+          <NavbarButton
+            label="Einstellungen"
+            route="/einstellungen"
+          ></NavbarButton>
+        </div>
+      </div>
     </div>
   );
 };
