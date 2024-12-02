@@ -48,7 +48,7 @@ const SchemeLightBlue = new ColorScheme(
     { name: "accent-dark", value: "#508AA8" },
     { name: "light", value: "#C8E0F4" },
     { name: "contrast", value: "#F2D1C9" },
-    { name: "slate", value: "slate-100" },
+    { name: "slate", value: "#E1E4E9" },
     { name: "white", value: "white" },
     { name: "black", value: "black" },
   ],
@@ -69,6 +69,39 @@ const SchemeRedPurple = new ColorScheme(
   "red-purple"
 );
 
-const allColorSchmes = [SchemeLightBlue, SchemeRedPurple];
-export { allColorSchmes };
+const SchemeGreen = new ColorScheme(
+  [
+    { name: "primary", value: "#2E8B57" }, // Sea green
+    { name: "accent-light", value: "#98FB98" }, // Pale green
+    { name: "accent-dark", value: "#006400" }, // Dark green
+    { name: "light", value: "#C8FACC" }, // Light mint
+    { name: "contrast", value: "#FFD700" }, // Golden yellow
+    { name: "slate", value: "#DCE6D9" }, // Soft grayish-green
+    { name: "white", value: "white" },
+    { name: "black", value: "black" },
+  ],
+  "green"
+);
+
+const SchemeEarthyBrown = new ColorScheme(
+  [
+    { name: "primary", value: "#8B4513" }, // Saddle brown
+    { name: "accent-light", value: "#D2B48C" }, // Tan
+    { name: "accent-dark", value: "#5C4033" }, // Dark brown
+    { name: "light", value: "#F5DEB3" }, // Wheat
+    { name: "contrast", value: "#A0522D" }, // Sienna
+    { name: "slate", value: "#EDE0D4" }, // Light beige
+    { name: "white", value: "white" },
+    { name: "black", value: "black" },
+  ],
+  "earthy-brown"
+);
+
+const allColorSchemes = [
+  SchemeLightBlue,
+  SchemeRedPurple,
+  SchemeGreen,
+  SchemeEarthyBrown,
+];
+export { allColorSchemes };
 export { ColorScheme };

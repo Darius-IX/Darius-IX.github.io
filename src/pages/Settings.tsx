@@ -1,4 +1,4 @@
-import { allColorSchmes, ColorScheme } from "../components/Misc/ColorScheme";
+import { allColorSchemes, ColorScheme } from "../components/Misc/ColorScheme";
 
 function SelectColorScheme(schemeName: ColorScheme) {
   schemeName.getColors().forEach((color) => {
@@ -14,11 +14,11 @@ const Settings = () => {
     <div className="p-4">
       <div className="text-center text-3xl">Settings</div>
       <ul className="">
-        {allColorSchmes.map((colorScheme) => (
-          <div className="flex justify-between">
+        {allColorSchemes.map((colorScheme) => (
+          <div className="flex justify-between p-2 bg-[#a0a0a0]">
             {/* <div className="peer/parent_button px-3 py-2 hover:bg-accent-light rounded-lg cursor-pointer"> */}
             <button
-              className="px-3 py-2 rounded-lg cursor-pointer"
+              className="rounded-lg hover:underline cursor-pointer"
               onClick={() => SelectColorScheme(colorScheme)}
             >
               {colorScheme.getSchemeName()}
