@@ -4,7 +4,7 @@ import { NavigateFunction, useNavigate } from "react-router-dom";
 const hotkeyToLink: { [key: string]: string } = {
   d: "/dashboard",
   p: "/profil",
-  v: "/verwaltung",
+  a: "/admin",
   e: "/einstellungen",
 };
 

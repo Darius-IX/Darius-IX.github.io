@@ -1,5 +1,5 @@
 import { OverlayScrollbarsComponent } from "overlayscrollbars-react";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { useState } from "react";
 import { Tooltip } from "react-tooltip";
 
 type Application = {
@@ -29,9 +29,10 @@ const exampleNewPeople: Application[] = [
   { id: 18, value: "..." },
 ];
 
-const Activator = () => {
+const Admin = () => {
   const [pendingApplications, setPendingApplications] =
     useState<Application[]>(exampleNewPeople);
+
   const [acceptedApplications, setAcceptedApplications] = useState<
     Application[]
   >([]);
@@ -39,32 +40,27 @@ const Activator = () => {
     Application[]
   >([]);
 
-  function AcceptApplication(applicationID: number) {
+  const AcceptApplication = (applicationID: number) => {
     const application = pendingApplications.find(
-      (appl) => appl.id === applicationID
+      (app) => app.id === applicationID
     );
     if (!application) return;
     setAcceptedApplications((prev) => [...prev, application]);
     setPendingApplications((prev) =>
       prev.filter((app) => app.id !== applicationID)
     );
-    // const updatedList = pendingApplications.filter(
-    //   (application) => application.id !== applicationID
-    // );
-    // setPendingApplications(updatedList);
-  }
+  };
 
-  function DeclineApplication(applicationID: number) {
+  const DeclineApplication = (applicationID: number) => {
     const application = pendingApplications.find(
-      (appl) => appl.id === applicationID
+      (app) => app.id === applicationID
     );
     if (!application) return;
     setDeclinedApplications((prev) => [...prev, application]);
-    const updatedList = pendingApplications.filter(
-      (application) => application.id !== applicationID
+    setPendingApplications((prev) =>
+      prev.filter((app) => app.id !== applicationID)
     );
-    setPendingApplications(updatedList);
-  }
+  };
 
   return (
     <div className="p-4">
@@ -72,11 +68,10 @@ const Activator = () => {
       <div className="w-full justify-center flex">
         <div>
           <div className="bg-accent-light border-2 border-primary rounded-xl max-w-[1440px]">
-            {/* <div className="w-96 max-h-56 bg-accent-light shrink-0 overflow-y-auto"> */}
             <h2 className="text-center font-semibold">Offene Anträge</h2>
             <hr />
             <OverlayScrollbarsComponent
-              className="overflow-y-auto  max-h-[600px] rounded-xl bg-accent-light px-4"
+              className="overflow-y-auto max-h-[600px] rounded-xl bg-accent-light px-4"
               options={{
                 scrollbars: {
                   autoHide: "move",
@@ -86,43 +81,32 @@ const Activator = () => {
               }}
               defer
             >
-              {exampleNewPeople.map((application) => {
-                return (
-                  <div key={application.id} className="text-xl">
-                    <div className="grid grid-cols-9 gap-6">
-                      <div className="col-span-7">{application.value}</div>
-                      <button
-                        id="accept-button"
-                        className="bx bx-check w-fit content-center"
-                        onClick={() =>
-                          AcceptApplication(
-                            application.id
-                            // pendingApplications,
-                            // () => setPendingApplications
-                          )
-                        }
-                      ></button>
-                      <Tooltip anchorSelect="#accept-button">
-                        Akzeptieren
-                      </Tooltip>
-                      <button
-                        id="decline-button"
-                        className="bx bx-x w-fit content-center"
-                        onClick={() => DeclineApplication(application.id)}
-                      ></button>
-                      <Tooltip anchorSelect="#decline-button">Ablehnen</Tooltip>
-                    </div>
+              {pendingApplications.map((application) => (
+                <div key={application.id} className="text-xl">
+                  <div className="grid grid-cols-9 gap-6">
+                    <div className="col-span-7">{application.value}</div>
+                    <button
+                      id="accept-button"
+                      className="bx bx-check w-fit content-center"
+                      onClick={() => AcceptApplication(application.id)}
+                    ></button>
+                    <Tooltip anchorSelect="#accept-button">Akzeptieren</Tooltip>
+                    <button
+                      id="decline-button"
+                      className="bx bx-x w-fit content-center"
+                      onClick={() => DeclineApplication(application.id)}
+                    ></button>
+                    <Tooltip anchorSelect="#decline-button">Ablehnen</Tooltip>
                   </div>
-                );
-              })}
+                </div>
+              ))}
             </OverlayScrollbarsComponent>
           </div>
           <div className="bg-accent-light border-2 border-primary rounded-xl max-w-[1440px]">
-            {/* <div className="w-96 max-h-56 bg-accent-light shrink-0 overflow-y-auto"> */}
             <h2 className="text-center font-semibold">Angenommene Anträge</h2>
             <hr />
             <OverlayScrollbarsComponent
-              className="overflow-y-auto  max-h-[600px] rounded-xl bg-accent-light px-4"
+              className="overflow-y-auto max-h-[600px] rounded-xl bg-accent-light px-4"
               options={{
                 scrollbars: {
                   autoHide: "move",
@@ -132,23 +116,20 @@ const Activator = () => {
               }}
               defer
             >
-              {acceptedApplications.map((application) => {
-                return (
-                  <div key={application.id} className="text-xl">
-                    <div className="grid grid-cols-9 gap-6">
-                      <div className="col-span-7">{application.value}</div>
-                    </div>
+              {acceptedApplications.map((application) => (
+                <div key={application.id} className="text-xl">
+                  <div className="grid grid-cols-9 gap-6">
+                    <div className="col-span-7">{application.value}</div>
                   </div>
-                );
-              })}
+                </div>
+              ))}
             </OverlayScrollbarsComponent>
           </div>
           <div className="bg-accent-light border-2 border-primary rounded-xl max-w-[1440px]">
-            {/* <div className="w-96 max-h-56 bg-accent-light shrink-0 overflow-y-auto"> */}
             <h2 className="text-center font-semibold">Abgelehnte Anträge</h2>
             <hr />
             <OverlayScrollbarsComponent
-              className="overflow-y-auto  max-h-[600px] rounded-xl bg-accent-light px-4"
+              className="overflow-y-auto max-h-[600px] rounded-xl bg-accent-light px-4"
               options={{
                 scrollbars: {
                   autoHide: "move",
@@ -158,15 +139,13 @@ const Activator = () => {
               }}
               defer
             >
-              {declinedApplications.map((application) => {
-                return (
-                  <div key={application.id} className="text-xl">
-                    <div className="grid grid-cols-9 gap-6">
-                      <div className="col-span-7">{application.value}</div>
-                    </div>
+              {declinedApplications.map((application) => (
+                <div key={application.id} className="text-xl">
+                  <div className="grid grid-cols-9 gap-6">
+                    <div className="col-span-7">{application.value}</div>
                   </div>
-                );
-              })}
+                </div>
+              ))}
             </OverlayScrollbarsComponent>
           </div>
         </div>
@@ -175,4 +154,22 @@ const Activator = () => {
   );
 };
 
-export default Activator;
+export default Admin;
+
+// const Admin = () => {
+//   return (
+//     <div className="p-4">
+//       <h1 className="text-4xl text-center">Admin</h1>
+//       <div>
+//         <div>Accountverwaltung</div>
+//         <div>Auflistung aller accounts</div>
+//         <div>sortierbar nach diversen eigenschaft</div>
+//         <div>gruppe auswählen</div>
+//         <div>nach name suchen (include regex + explanation)</div>
+//         <div>etc (siehe req doc)</div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Admin;

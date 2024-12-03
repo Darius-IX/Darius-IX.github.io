@@ -8,7 +8,6 @@ import Footer from "./components/Footer/Footer";
 import Login from "./pages/Login";
 import Registration from "./pages/Registration";
 import TestPage from "./pages/TestPage";
-import Admin from "./pages/Admin";
 import Activator from "./pages/Activator";
 import Uploader from "./pages/Uploader";
 import Settings from "./pages/Settings";
@@ -55,10 +54,9 @@ function App() {
               <Route index path="/login" element={<Login />}></Route>
               <Route path="/dashboard" element={<Dashboard />}></Route>
               <Route path="/profil" element={<Profile />}></Route>
-              <Route path="/verwaltung" element={<Administration />}></Route>
+              <Route path="/admin" element={<Administration />}></Route>
               <Route path="/login" element={<Login />}></Route>
               <Route path="/registration" element={<Registration />}></Route>
-              <Route path="/admin" element={<Admin />}></Route>
               <Route path="/freischalter" element={<Activator />}></Route>
               <Route path="/uploader" element={<Uploader />}></Route>
               <Route path="/einstellungen" element={<Settings />}></Route>

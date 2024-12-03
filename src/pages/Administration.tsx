@@ -1,8 +1,10 @@
+import "./Administration.scss";
+
 const Administration = () => {
   return (
-    <div>
-      <div>Button nur anzeigen wenn rolle</div>
-      <div>Dropdown je nach rolle?</div>
+    <div className="administration-page">
+      <div className="text-div">Button nur anzeigen wenn rolle</div>
+      <div className="text-div">Dropdown je nach rolle?</div>
       <div>
         Hier dann Uploader (kümmert sich um formatieren der docs + upload)
       </div>
