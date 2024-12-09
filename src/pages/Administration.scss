@@ -1,6 +1,18 @@
 .administration-page {
     padding: 1rem;
-    .text-div {
-        background-color: var(--color-accent-light);
+    .member-list {
+        border-radius: 0.5rem;
+        border-color: var(--color-primary);
+        border-width: 0.25rem;
+        .member-entry {
+            padding: 0.25rem;
+            margin: 0.125rem;
+            border-width: 0.125rem;
+            border-color: var(--color-primary);
+            :hover {
+                text-decoration-line: underline;
+                cursor: pointer;
+            }
+        }
     }
 }
